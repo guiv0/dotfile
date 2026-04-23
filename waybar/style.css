@@ -1,0 +1,98 @@
+@import "mocha.css";
+
+* {
+  all: unset;
+  font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", "Noto Sans CJK KR";
+  font-size: 15px;
+
+}
+
+tooltip {
+  background-color: @base;
+  color:@text;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.modules-center {
+  background: @base;
+  color: @text;
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 1px solid @surface0;
+  box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
+}
+
+#clock {
+  font-weight: 600;
+  margin: 0 10px;
+  color: @text;
+  box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
+}
+
+#workspaces {
+  background-color: @mantle;
+  padding: 4px;
+  margin: 4px 0;
+  border-radius: 99px;
+}
+
+#workspaces button {
+  background-color: @surface1;
+  padding: 0px;
+  border-radius: 99px;
+  margin: 0 3px;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 20px;
+}
+
+#workspaces button.empty {
+  background-color: @surface0;
+  color: @surface0;
+  min-width: 8px;
+  margin: 0 4px;
+}
+
+#workspaces button.empty:hover {
+  background-color: @overlay2;
+  min-width: 15px;
+}
+
+#workspaces button.active {
+  background-color: @mauve;
+  min-width: 40px;
+  color: @base;
+}
+
+#workspaces button:hover {
+  background-color: @lavender;
+}
+
+#battery {
+  background-color: @mauve;
+  margin: 6px 0;
+  padding: 0 8px;
+  border-radius: 99px;
+  font-weight: 500;
+  color: @base;
+  letter-spacing: -1px
+}
+
+#battery.warning {
+  background-color: @yellow;
+}
+#battery.critical{
+  background-color: @red;
+}
+
+/* Styling the standalone Left module */
+#mpris {
+    background-color: @base;
+    color: @text;
+    margin: 2px 10px; /* Pushes it away from the corner */
+    padding: 2px 10px;
+    border-radius: 99px;
+    border: 1px solid @surface0;
+    box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
+}
