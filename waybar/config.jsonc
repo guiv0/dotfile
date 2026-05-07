@@ -2,17 +2,19 @@
     "spacing": 25,
     "margin-top": 5,
     "layer": "top", // Changed to top so windows don't cover it
-    
     // 1. Define the sections
-    "modules-left": ["mpris"], 
+    "modules-left": [
+        "mpris"
+    ],
     "modules-center": [
         "clock",
         "hyprland/workspaces",
         "pulseaudio",
         "network",
-        "battery"
+        "battery",
+        "power-profiles-daemon",
+        "tray"
     ],
-
     // 2. Add the mpris module config
     "mpris": {
         "format": "{player_icon} {title}",
@@ -27,42 +29,69 @@
         },
         "max-length": 30
     },
-
     "clock": {
         "interval": 60,
+        "tooltip": true,
         "format": "{:%H:%M}",
-        "max-length": 25,
-        "tooltip": false
+        "tooltip-format": "{:%d/%m/%Y}"
     },
-
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
-            "*": 5 
+            "*": 5
         }
     },
-
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "Muted ",
         "format-icons": {
-            "default": ["", ""]
+            "default": [
+                "",
+                ""
+            ]
         },
         "scroll-step": 1,
         "on-click": "pavucontrol"
     },
-
     "network": {
         "format-wifi": "{essid} {icon}",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
         "format-disconnected": ""
     },
-
     "battery": {
         "bat": "BAT0",
         "interval": 60,
         "format": "{capacity}% {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     }
 }

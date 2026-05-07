@@ -4,15 +4,15 @@
   all: unset;
   font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", "Noto Sans CJK KR";
   font-size: 15px;
-
 }
 
 tooltip {
   background-color: @base;
-  color:@text;
+  color: @text;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid @surface0; /* Added a subtle border to match Mocha style */
 }
 
 .modules-center {
@@ -21,14 +21,14 @@ tooltip {
   padding: 2px 10px;
   border-radius: 99px;
   border: 1px solid @surface0;
-  box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
+  /* Use @crust for shadows for a more "Mocha" feel */
+  box-shadow: 0 4px 8px @crust; 
 }
 
 #clock {
   font-weight: 600;
   margin: 0 10px;
   color: @text;
-  box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
 }
 
 #workspaces {
@@ -62,7 +62,7 @@ tooltip {
 #workspaces button.active {
   background-color: @mauve;
   min-width: 40px;
-  color: @base;
+  color: @base; /* Base background provides high contrast on the Mauve pill */
 }
 
 #workspaces button:hover {
@@ -76,23 +76,50 @@ tooltip {
   border-radius: 99px;
   font-weight: 500;
   color: @base;
-  letter-spacing: -1px
+  letter-spacing: -1px;
 }
 
 #battery.warning {
   background-color: @yellow;
-}
-#battery.critical{
-  background-color: @red;
+  color: @base;
 }
 
-/* Styling the standalone Left module */
+#battery.critical {
+  background-color: @red;
+  color: @base;
+}
+
 #mpris {
     background-color: @base;
     color: @text;
-    margin: 2px 10px; /* Pushes it away from the corner */
+    margin: 2px 10px;
     padding: 2px 10px;
     border-radius: 99px;
     border: 1px solid @surface0;
-    box-shadow: 0 4px 8px rgba(17, 17, 27, 0.4);
+    box-shadow: 0 4px 8px @crust;
+}
+
+/* --- FIXED TRAY COLORS --- */
+#tray {
+    background-color: @base;
+    border: 1px solid @surface1;  /* Changed mauve border to surface1 for a cleaner, modern look */
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 4px 6px;
+    color: @text;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    background-color: @red;
+    color: @base;
+    border-radius: 10px;
+}
+
+#tray menu {
+  background-color: @base;
+  color: @text;
 }
